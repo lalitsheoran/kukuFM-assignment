@@ -17,6 +17,9 @@ For extra fun, you can try the following:
 that displays the details of the bank  ✅<br />
 
 
+## Hosted on Netlify with Continous Integration : https://kukufm-assignment-lalit.netlify.app/
+
+
 ## Available Scripts
 
 In the project directory, you can run:
