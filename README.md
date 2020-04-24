@@ -7,7 +7,7 @@ Essentials your applications should have:
 2. user should be able to search by text for the banks, across all the fields (important: there
 would be no search button)  ✅<br />
 3. pagination for the results of the search, the user should be able to select page size  ✅<br />
-4. mark some banks as ​ favourites​ . View banks that were marked as favourites (favourites  ✅<br />
+4. mark some banks as ​ favourites​ . View banks that were marked as favourites (favourites
 should persist state event if the website is refreshed or reloaded)  ✅<br />
 5. API calls should be cached  ✅<br />
 6. your application should be deployed to Heroku / Github pages  ✅<br />
