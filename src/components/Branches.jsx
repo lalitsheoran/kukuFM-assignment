@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Pagination from './Pagination'
-import { addtofavourites, fetchdata, setfiltereddata, usecache } from "./../redux/action";
+import { addtofavourites, fetchdata, setfiltereddata, usecache, setperpage } from "./../redux/action";
 
 class Branches extends React.Component {
   constructor(props) {
@@ -74,6 +74,12 @@ class Branches extends React.Component {
     }
   };
 
+  handlePerPage=(e)=>{
+    const {setPerPage}=this.props
+    let choosenNum=Number(e.target.value)
+    setPerPage(choosenNum)
+  }
+
   componentDidMount() {
     this.handleApiCall(this.state.city);
   }
@@ -87,7 +93,7 @@ class Branches extends React.Component {
             <label for="cities">Select City</label>
             <select
               onChange={this.handleCityChange}
-              className="form-control"
+              className="custom-select"
               name=""
               id="cities"
             >
@@ -113,9 +119,20 @@ class Branches extends React.Component {
             </button>
           </Link>
         </div>
+        <div className="col d-flex justify-content-end">
+          <div>
+            <label for="perPage">Result per page</label>
+            <select onChange={this.handlePerPage} className="custom-select" name="" id="perPage">
+              <option selected value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+            </select>
+          </div>
+        </div>
         <div>
           {this.state.filteredData && (
-            <table className="table table-striped">
+            <div className="table-responsive">
+              <table className="table table-striped">
               <thead>
                 <th>IFSC</th>
                 <th>Bank ID</th>
@@ -167,6 +184,7 @@ class Branches extends React.Component {
                 })}
               </tbody>
             </table>
+            </div>
           )}
           {!this.state.filteredData && (
             <p className="text-center text-primary h3 mt-5">
@@ -195,6 +213,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchData: (arg) => dispatch(fetchdata(arg)),
   filteredData:(arg)=>dispatch(setfiltereddata(arg)),
   useCache: (arg) => dispatch(usecache(arg)),
+  setPerPage: (arg) => dispatch(setperpage(arg)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Branches);
