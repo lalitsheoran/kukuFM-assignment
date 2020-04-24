@@ -1,6 +1,6 @@
-KuKu FM Assignment
+## KuKu FM Assignment
 
-## All required features implemented including the extra one
+### All required features implemented including the extra one
 
 Essentials your applications should have:
 1. bank search screen which would show a list of banks ✅<br />
@@ -17,7 +17,7 @@ For extra fun, you can try the following:
 that displays the details of the bank  ✅<br />
 
 
-# Hosted on Netlify with Continous Integration : https://kukufm-assignment-lalit.netlify.app/
+### Hosted on Netlify with Continous Integration : https://kukufm-assignment-lalit.netlify.app/
 
 
 ## Available Scripts
